@@ -42,15 +42,16 @@
 
 <ion-content>
   <ion-list>
-    <ion-card button="true">
+    <ion-card button="true" 
+      *ngFor="let item of userService.userItems">
       <ion-item lines="none">
           <ion-avatar slot="start">
             <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
           </ion-avatar>
-          <ion-label>John Doe</ion-label>
+          <ion-label>{{ item.id }}</ion-label>
       </ion-item>
 
-      <ion-img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Anatomy_of_a_Sunset-2.jpg/220px-Anatomy_of_a_Sunset-2.jpg"></ion-img>
+      <ion-img src="{{ item.thumbnailUrl }}"></ion-img>
 
 
       <ion-card-content>
