@@ -11,7 +11,7 @@ const routes: Routes = [
   },
           {
             path: 'detail',
-            component: UserDetailComponent
+            component: UserDetailComponent 
           }
 ];
 

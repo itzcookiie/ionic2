@@ -14,7 +14,7 @@ export class UserDetailComponent implements OnInit {
   public item
 
   ngOnInit() {
-    this.item = this.userService.displayedItem
+    this.item = this.userService.displayedItem 
   }
 
   
