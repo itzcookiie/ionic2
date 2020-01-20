@@ -1,17 +1,60 @@
 <ion-header>
+  <ion-toolbar>
+    <ion-tabs >
+      <ion-tab-bar >
+        <ion-grid no-padding="true">
+          <ion-row class="ion-align-items-center">
+            <ion-col pull="1">
+              <ion-tab-button tab="schedule">
+                <ion-icon size="large" name="menu"></ion-icon>
+              </ion-tab-button>
+            </ion-col > 
+            <ion-col size="5">
+              <ion-title >LOGO</ion-title>
+            </ion-col>
+            <ion-col push="1">
+              <ion-tab-button>
+                <ion-icon size="large" name="options"></ion-icon>
+              </ion-tab-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
 
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar class="secondary-border" translucent="true">
+        <ion-tab-button >
+          <ion-label color="medium">MISSIONS</ion-label>
+        </ion-tab-button>
+        <ion-tab-button>
+          <ion-label color="medium">NOTES</ion-label>
+        </ion-tab-button>
+        <ion-tab-button >
+          <ion-label color="medium">REQUESTS</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card button="true" >
+    <ion-card button="true" *ngIf="item">
+      <ion-item lines="none">
+          <ion-avatar slot="start">
+            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          </ion-avatar>
+          <ion-label>{{ item.id }}</ion-label>
+      </ion-item>
 
+      <ion-img src="{{ item.thumbnailUrl }}"></ion-img>
 
 
       <ion-card-content>
         This is content, without any paragraph or header tags,
-        within an ion-card-content element
-
-        zzzzzzzz
+        within an ion-card-content element.
       </ion-card-content>
 
     </ion-card>
