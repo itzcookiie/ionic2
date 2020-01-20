@@ -8,6 +8,7 @@ export class UserService {
   constructor() { }
 
   public userItems: UserItem[] = []
+  public displayedItem:UserItem
 
   public async fetchData() {
     const response = await fetch('https://jsonplaceholder.typicode.com/photos')
@@ -16,6 +17,11 @@ export class UserService {
                                                         .map(item => this.userItems.push(item))
     return responseData 
   }
+
+  public showItem(item: UserItem) {
+    this.displayedItem = item 
+  }
+
 }
 
 interface UserItem {

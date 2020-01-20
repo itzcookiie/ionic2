@@ -41,12 +41,18 @@
 </ion-header>
 
 <ion-content>
+  <ion-router-outlet></ion-router-outlet>
+
   <ion-list>
     <ion-card button="true" 
-      *ngFor="let item of userService.userItems">
-      <ion-item lines="none">
+    *ngFor="let item of userService.userItems; index as detailId"
+    (click)="userService.showItem(item)"
+    [routerLink]="['detail']"
+    >
+
+    <ion-item lines="none">
           <ion-avatar slot="start">
-            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+              <img  src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
           </ion-avatar>
           <ion-label>{{ item.id }}</ion-label>
       </ion-item>
@@ -56,9 +62,13 @@
 
       <ion-card-content>
         This is content, without any paragraph or header tags,
-        within an ion-card-content element.
+        within an ion-card-content element...
       </ion-card-content>
 
     </ion-card>
+
   </ion-list>
-</ion-content>
+</ion-content> 
+
+
+ 

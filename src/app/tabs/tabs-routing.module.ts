@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { UserDetailComponent } from '../user-detail/user-detail.component';
+
 
 const routes: Routes = [
   {
@@ -24,7 +26,7 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../tab2/tab2.module').then(m => m.Tab2PageModule)
-          }
+          },
         ]
       },
       {
