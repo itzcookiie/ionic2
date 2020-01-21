@@ -1,16 +1,16 @@
-<ion-menu side="start" menuId="first" content-id="main">
+<ion-menu side="start" type="overlay" menuId="main-menu" content-id="main">
   <ion-header>
     <ion-toolbar color="primary">
-      <ion-title>Start Menu</ion-title>
+      <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
+      <ion-item (click)="closeMenu()" [routerLink]="['tabs/tab2']">Dashboard</ion-item>
+      <ion-item>Photos</ion-item>
+      <ion-item>Available missions</ion-item>
+      <ion-item>My missions</ion-item>
+      <ion-item>Chat</ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
