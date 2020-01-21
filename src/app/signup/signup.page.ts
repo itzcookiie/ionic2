@@ -22,6 +22,7 @@ export class SignupPage implements OnInit {
     if(this.userInput.email && this.userInput.password) {
       this.userService.saveUser(this.userInput)
       this.router.navigate(['/user-profile'])
+      this.userInput = {email: '', password: ''}
     } else {
       console.log('Error')
     }

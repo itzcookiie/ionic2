@@ -23,10 +23,10 @@ export class LoginPage implements OnInit {
 
   async userLogin() {
       const user = await this.userService.findUser(this.userInput)
-      console.log(user)
       if(user) {
         this.invalidUser = false;
         this.router.navigate(['/user-profile'])
+        this.userInput = {email: '', password: ''}
       } else {
         this.invalidUser = true;
       }
