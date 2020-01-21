@@ -7,8 +7,6 @@ import { Tab2Page } from './tab2.page';
 import { Tab2PageRoutingModule } from './tab2-routing.module'
 import { UserDetailComponent } from '../user-detail/user-detail.component'
 
-
-
 @NgModule({
   imports: [
     IonicModule,
