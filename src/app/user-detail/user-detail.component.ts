@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from '../services/user.service'
-import { ActivatedRoute, ParamMap, Router } from '@angular/router'
+import { ActivatedRoute, ParamMap, Router, CanActivate } from '@angular/router'
 import { switchMap } from 'rxjs/operators'
 
 
@@ -9,12 +9,12 @@ import { switchMap } from 'rxjs/operators'
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.scss'],
 })
-export class UserDetailComponent implements OnInit {
+export class UserDetailComponent implements OnInit, CanActivate {
 
   constructor(
     private userService: UserService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
     ) { }
 
   public item
@@ -24,7 +24,14 @@ export class UserDetailComponent implements OnInit {
 
     const id = this.route.snapshot.paramMap.get('detailId')
     console.log(id, 'id')
-    this.item = this.userService.getItem(+id) 
+    this.item = this.userService.getItem(+id)  
 }
+
+  canActivate() {
+    if(!this.router.navigated) { 
+      return this.router.navigate(['tabs/tab2'])   
+    }
+    return true
+  }
 
 }

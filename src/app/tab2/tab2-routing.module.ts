@@ -7,7 +7,8 @@ import { UserDetailComponent } from '../user-detail/user-detail.component';
 const routes: Routes = [
   { 
     path: 'detail/:detailId',
-    component: UserDetailComponent 
+    component: UserDetailComponent ,
+    canActivate: [UserDetailComponent] 
   },
   {
         path: '', 
@@ -18,6 +19,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [UserDetailComponent]
 })
 export class Tab2PageRoutingModule {}
