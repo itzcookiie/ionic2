@@ -12,6 +12,8 @@ export class LoginPage implements OnInit {
 
   constructor(private router:Router, private userService:UserService) { }
 
+  public invalidUser:Boolean = false;
+
   private userInput:User = {
     email: '',
     password: ''
@@ -23,9 +25,10 @@ export class LoginPage implements OnInit {
       const user = await this.userService.findUser(this.userInput)
       console.log(user)
       if(user) {
+        this.invalidUser = false;
         this.router.navigate(['/user-profile'])
       } else {
-        alert('Invalid username or password')
+        this.invalidUser = true;
       }
   }
 

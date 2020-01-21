@@ -5,3 +5,9 @@ ion-card-title {
 .secondary-border {
     --border: none;
 }
+
+ion-img {
+    height: 500px;
+    width: 100%;
+    object-fit: fill;
+}

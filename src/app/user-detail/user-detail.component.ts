@@ -29,7 +29,7 @@ export class UserDetailComponent implements OnInit, CanActivate {
 
   canActivate() {
     if(!this.router.navigated) { 
-      return this.router.navigate(['tabs/tab2'])   
+      return this.router.navigate(['user-profile'])    
     }
     return true
   }
