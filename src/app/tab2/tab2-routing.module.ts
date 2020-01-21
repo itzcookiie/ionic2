@@ -5,14 +5,15 @@ import { UserDetailComponent } from '../user-detail/user-detail.component';
 
 
 const routes: Routes = [
+  { 
+    path: 'detail/:detailId',
+    component: UserDetailComponent 
+  },
   {
         path: '', 
         component: Tab2Page,
   },
-          {
-            path: 'detail',
-            component: UserDetailComponent 
-          }
+
 ];
 
 @NgModule({
