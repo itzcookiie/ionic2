@@ -7,8 +7,6 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
 
-import { UserDetailComponent } from '../user-detail/user-detail.component';
-
 
 @NgModule({
   imports: [
