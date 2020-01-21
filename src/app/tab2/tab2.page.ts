@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { UserService } from '../services/user.service'
-import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -10,15 +9,10 @@ import { MenuController } from '@ionic/angular';
 })
 export class Tab2Page {
 
-  constructor(private userService: UserService, private menu: MenuController) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.userService.fetchData()
-  }
-
-  openFirst() {
-    this.menu.enable(true, 'first');
-    this.menu.open('first');
   }
 
 }
