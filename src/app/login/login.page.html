@@ -1,9 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="userInput.email" type="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input [(ngModel)]="userInput.password" type="password"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="userLogin()" expand="block">Sign up</ion-button>
 
 </ion-content>

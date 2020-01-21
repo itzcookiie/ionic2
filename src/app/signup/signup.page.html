@@ -7,12 +7,12 @@
 <ion-content>
   <ion-item>
     <ion-label position="floating">Email</ion-label>
-    <ion-input [(ngModel)]="userInput.email" type="email"></ion-input>
+    <ion-input required [(ngModel)]="userInput.email" type="email"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Password</ion-label>
-    <ion-input [(ngModel)]="userInput.password" type="password"></ion-input>
+    <ion-input required minLength=4 [(ngModel)]="userInput.password" type="password"></ion-input>
   </ion-item>
 
   <ion-button (click)="userSignUp()" expand="block">Sign up</ion-button>

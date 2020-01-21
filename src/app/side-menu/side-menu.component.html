@@ -10,7 +10,7 @@
       <ion-item>Photos</ion-item>
       <ion-item>Available missions</ion-item>
       <ion-item>My missions</ion-item>
-      <ion-item>Chat</ion-item>
+      <ion-item (click)="closeMenu()" [routerLink]="['tabs/login']">Log out</ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>
