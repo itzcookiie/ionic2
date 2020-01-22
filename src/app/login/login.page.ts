@@ -27,6 +27,7 @@ export class LoginPage implements OnInit {
         this.userService.validateUser();
         this.router.navigate(['/user-profile'])
         this.userInput = {email: '', password: ''}
+        this.message = ''
       } else {
         this.message = 'Incorrect email or password'
       }

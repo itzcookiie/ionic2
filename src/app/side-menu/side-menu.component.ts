@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular'
 import { UserService } from '../services/user.service'
+import { Plugins } from '@capacitor/core';
+
+const { Storage } = Plugins;
 
 @Component({
   selector: 'app-side-menu',
@@ -16,6 +19,7 @@ export class SideMenuComponent implements OnInit {
   public closeMenu() {
     this.menu.close('main-menu')
     this.userService.inValidateUser()
+    this.userService.removeCurrentUser()
   }
 
 }
