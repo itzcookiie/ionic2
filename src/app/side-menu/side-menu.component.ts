@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular'
+import { UserService } from '../services/user.service'
 
 @Component({
   selector: 'app-side-menu',
@@ -8,12 +9,13 @@ import { MenuController } from '@ionic/angular'
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor(private menu: MenuController) { }
+  constructor(private menu: MenuController, private userService: UserService) { }
 
   ngOnInit() {}
 
   closeMenu() {
     this.menu.close('main-menu')
+    this.userService.inValidateUser()
   }
 
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Tab2Page } from './tab2.page';
 import { UserDetailComponent } from '../user-detail/user-detail.component';
+import { AuthGuard } from '../auth/auth.guard'
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {
         path: '', 
         component: Tab2Page,
+        canActivate: [AuthGuard]
   },
 
 ];

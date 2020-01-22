@@ -10,9 +10,12 @@ export class UserService {
 
   constructor() { }
 
+  public validUser:Boolean = false
+  public currentItem
   public userItems = []
   private users:Users[] = [];
   private USER_STORAGE:string = 'user'
+  
 
   public async fetchData() {
     const response = await fetch('http://www.json-generator.com/api/json/get/bOjYXEnnci?indent=2')
@@ -25,13 +28,13 @@ export class UserService {
     return responseData 
   }
 
-  public getItem(id) {
+  public getItem(id: number): void {
     console.log(typeof id, 'id please') 
     console.log(this.userItems.filter((item,index) => index === id))
-    return this.userItems.filter((item,index) => index === id) 
+    this.currentItem = this.userItems.filter((item,index) => index === id) 
   }
 
-  public saveUser(user) {
+  public saveUser(user): void {
     this.users.push(user)
     Storage.set({
       key: this.USER_STORAGE,
@@ -48,6 +51,14 @@ export class UserService {
       return user.find(u => u)
     }
     return undefined
+  }
+
+  public validateUser(): void {
+    this.validUser = true;
+  }
+
+  public inValidateUser(): void {
+    this.validUser = false;
   }
 }
 

@@ -14,7 +14,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let item of item">
+    <ion-card *ngFor="let item of userService.currentItem">
       <ion-img src="{{ item.picture }}"></ion-img>
 
       <ion-card-header>
