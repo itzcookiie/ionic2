@@ -1,12 +1,8 @@
-ion-card-title {
+.title {
     font-size: 25px; 
 }
 
-.secondary-border {
-    --border: none;
-}
-
-ion-img {
+.enlarged-pic {
     height: 500px;
     width: 100%;
     object-fit: fill;

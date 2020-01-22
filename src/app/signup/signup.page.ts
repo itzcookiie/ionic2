@@ -11,26 +11,31 @@ export class SignupPage implements OnInit {
 
   constructor(private router:Router, private userService:UserService) { }
 
+  ngOnInit() {}
+
+
   private userInput:User = {
     email: '',
     password: ''
   }
 
-  ngOnInit() {}
+  private message:string = ''
 
   userSignUp() {
-    if(this.userInput.email && this.userInput.password) {
+    const { email, password }:User = this.userInput
+    if(email && password.length === 4) {
       this.userService.saveUser(this.userInput)
-      this.userService.validateUser()
       this.router.navigate(['/user-profile'])
+      this.userService.validateUser()
       this.userInput = {email: '', password: ''}
+    } else if(!email.includes("@") && password.length <= 3) {
+      this.message = `Email must include @ and password must be a minimum of 4 characters`
+    } else if(!email.includes("@")) {
+      this.message = 'Email must include @'
     } else {
-      console.log('Error')
+      this.message = 'Password must be a minimum of 4 characters'
     }
-
   }
-
-
 }
 
 interface User {

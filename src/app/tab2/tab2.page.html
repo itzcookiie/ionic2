@@ -1,16 +1,13 @@
 <ion-header>
   <ion-toolbar>
-
     <ion-tabs >
       <ion-tab-bar >
         <ion-grid no-padding="true">
           <ion-row class="ion-align-items-center">
-            <ion-col pull="1">
-                <ion-tab-button>
-                  <ion-buttons>
-                    <ion-menu-button></ion-menu-button>
-                  </ion-buttons>
-                </ion-tab-button>
+            <ion-col>
+              <ion-buttons>
+                <ion-menu-button></ion-menu-button>
+              </ion-buttons>
             </ion-col > 
             <ion-col size="5">
               <ion-title >LOGO</ion-title>
@@ -28,7 +25,7 @@
 
   <ion-toolbar>
     <ion-tabs>
-      <ion-tab-bar class="secondary-border" translucent="true">
+      <ion-tab-bar class="border">
         <ion-tab-button >
           <ion-label color="medium">MISSIONS</ion-label>
         </ion-tab-button>
@@ -43,7 +40,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content css="color:primary">
+<ion-content>
   <ion-router-outlet ></ion-router-outlet >
 
   <ion-list >

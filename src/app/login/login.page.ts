@@ -17,19 +17,20 @@ export class LoginPage implements OnInit {
     password: ''
   }
 
+  private message:string
+
   ngOnInit() {}
 
-  async userLogin() {
-      const user = await this.userService.findUser(this.userInput)
+  public async userLogin(): Promise<void> {
+      const user:User = await this.userService.findUser(this.userInput)
       if(user) {
-        this.userService.validateUser()
+        this.userService.validateUser();
         this.router.navigate(['/user-profile'])
         this.userInput = {email: '', password: ''}
       } else {
-        this.userService.validUser = false;
+        this.message = 'Incorrect email or password'
       }
   }
-
 }
 
 interface User {
