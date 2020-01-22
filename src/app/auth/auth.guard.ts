@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Plugins } from '@capacitor/core';
 import { UserService } from '../services/user.service'
@@ -12,7 +12,7 @@ const { Storage } = Plugins;
 })
 export class AuthGuard implements CanActivate, CanActivateChild {
 
-  constructor(private userService:UserService) {}
+  constructor(private userService:UserService, private router:Router) {}
 
   private CURRENT_USER:string = 'current-user'
  
@@ -25,6 +25,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
           console.log(data, 'data for storage in auth guard')
           return true;
         }
+        this.router.navigate(['tabs/login'])
         return false
       })
   }
