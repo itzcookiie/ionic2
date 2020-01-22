@@ -12,5 +12,9 @@
 
 ## Notes
 
-- I have an android phone, so I was only able to develop on an android device. I am not too sure how it would turn out on ios.
-- Learning and using typescript, ionic and angular was pretty fun. Getting my head around everything took longer than I thought, but I am pretty happy with what I've done
+- I have an android phone, so I was only able to develop on an android device
+
+## Thoughts
+Learning and using typescript, ionic and angular was pretty fun. Getting my head around everything took longer than I thought, but I am pretty happy with what I've done. I attempted to build out the wireframes for each view, but ended up focusing more on the functionality and left the designs out. 
+
+I also decided to use Storage from the capacitor API as my "mock" store/database instead of creating a back end. I made this decision because I wanted to focus more on front end development.
