@@ -17,8 +17,8 @@
 
   <ion-button (click)="userLogin()" expand="block">Login</ion-button> 
 
-  <ion-text color="danger" *ngIf="userService.validUser">
-    Invalid username or password!
+  <ion-text color="danger" *ngIf="message">
+    {{message}}
   </ion-text>
 
 </ion-content>

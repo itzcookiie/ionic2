@@ -13,7 +13,7 @@ export class SideMenuComponent implements OnInit {
 
   ngOnInit() {}
 
-  closeMenu() {
+  public closeMenu() {
     this.menu.close('main-menu')
     this.userService.inValidateUser()
   }

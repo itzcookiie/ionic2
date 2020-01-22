@@ -1,9 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button 
-      text="back"> 
-    </ion-back-button>
+      <ion-back-button text="back"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-menu-button slot="end"></ion-menu-button>  
@@ -15,11 +13,11 @@
 
 <ion-content>
     <ion-card *ngFor="let item of userService.currentItem">
-      <ion-img src="{{ item.picture }}"></ion-img>
+      <ion-img class="enlarged-pic" src="{{ item.picture }}"></ion-img>
 
       <ion-card-header>
         <ion-card-subtitle>Destination</ion-card-subtitle>
-        <ion-card-title>{{ item.name }}</ion-card-title>
+        <ion-card-title class="title">{{ item.name }}</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>

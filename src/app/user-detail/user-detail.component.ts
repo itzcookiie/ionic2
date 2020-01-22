@@ -18,7 +18,7 @@ export class UserDetailComponent implements OnInit, CanActivate {
     ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('detailId')
+    const id:string = this.route.snapshot.paramMap.get('detailId')
     this.userService.getItem(+id)  
 }
 
