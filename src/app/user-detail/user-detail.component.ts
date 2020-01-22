@@ -17,14 +17,9 @@ export class UserDetailComponent implements OnInit, CanActivate {
     private router: Router,
     ) { }
 
-  public item
-
   ngOnInit() {
-    this.userService.fetchData() 
-
     const id = this.route.snapshot.paramMap.get('detailId')
-    console.log(id, 'id')
-    this.item = this.userService.getItem(+id)  
+    this.userService.getItem(+id)  
 }
 
   canActivate() {

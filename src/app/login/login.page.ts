@@ -12,8 +12,6 @@ export class LoginPage implements OnInit {
 
   constructor(private router:Router, private userService:UserService) { }
 
-  public invalidUser:Boolean = false;
-
   private userInput:User = {
     email: '',
     password: ''
@@ -24,11 +22,11 @@ export class LoginPage implements OnInit {
   async userLogin() {
       const user = await this.userService.findUser(this.userInput)
       if(user) {
-        this.invalidUser = false;
+        this.userService.validateUser()
         this.router.navigate(['/user-profile'])
         this.userInput = {email: '', password: ''}
       } else {
-        this.invalidUser = true;
+        this.userService.validUser = false;
       }
   }
 
