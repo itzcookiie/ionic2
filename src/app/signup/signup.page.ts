@@ -21,13 +21,17 @@ export class SignupPage implements OnInit {
 
   private message:string = ''
 
-  userSignUp() {
-    const { email, password }:User = this.userInput
-    if(email && password.length === 4) {
+  userSignUp(): void {
+    this.checkUserCredentials(this.userInput)
+  }
+
+  checkUserCredentials({email, password}: User): void {
+    if(email.includes("@") && password.length === 4) {
       this.userService.saveUser(this.userInput)
       this.router.navigate(['/user-profile'])
-      this.userService.validateUser()
       this.userInput = {email: '', password: ''}
+      this.message = ''
+      this.userService.validateUser()
     } else if(!email.includes("@") && password.length <= 3) {
       this.message = `Email must include @ and password must be a minimum of 4 characters`
     } else if(!email.includes("@")) {

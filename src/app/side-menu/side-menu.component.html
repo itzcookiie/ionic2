@@ -7,9 +7,9 @@
   <ion-content>
     <ion-list>
       <ion-item (click)="closeMenu()" [routerLink]="['user-profile']">Dashboard</ion-item>
-      <ion-item>Photos</ion-item>
-      <ion-item>Available missions</ion-item>
-      <ion-item>My missions</ion-item>
+      <ion-item disabled="true">Photos</ion-item>
+      <ion-item disabled="true">Available missions</ion-item>
+      <ion-item disabled="true">My missions</ion-item>
       <ion-item (click)="closeMenu()" [routerLink]="['tabs/login']">Log out</ion-item>
     </ion-list>
   </ion-content>

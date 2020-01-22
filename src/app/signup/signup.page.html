@@ -5,31 +5,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row class="ion-align-items-center">
-      <ion-col>
-        <ion-item>
-          <ion-label position="fixed">Email: </ion-label>
-          <ion-input title="A part number is a digit followed by three uppercase letters." required [(ngModel)]="userInput.email" type="email"></ion-input>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label position="fixed">Password: </ion-label>
-          <ion-input required minlength=4 [(ngModel)]="userInput.password" type="password"></ion-input>
-        </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Email</ion-label>
+    <ion-input placeholder="Type email here" [required]="" [(ngModel)]="userInput.email" type="email"></ion-input>
+  </ion-item>
 
-        <ion-button (click)="userSignUp()" expand="block">Sign up</ion-button>
+  <ion-item>
+    <ion-label position="fixed">Password</ion-label>
+    <ion-input placeholder="Type password here" required minlength=4 [(ngModel)]="userInput.password" type="password"></ion-input>
+  </ion-item>
 
-        <ion-text color="danger" *ngIf="message">
-          <p>Invalid email or password.</p>
-          <p>{{message}}</p>
-          
-        </ion-text>
+  <ion-button (click)="userSignUp()" expand="block">Sign up</ion-button>
 
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-
+  <ion-text color="danger" *ngIf="message">
+    <p>{{message}}</p>
+  </ion-text>
 
 </ion-content>

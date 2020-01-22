@@ -13,9 +13,10 @@ export class UserService {
   public validUser:boolean = false
   public currentItem:UserItem[]
   public userItems:UserItem[] = []
+  public currentUser:any
   private users:User[] = [];
   private USER_STORAGE:string = 'user'
-  private 
+  private CURRENT_USER_STORAGE:string = 'current-user'
   
 
   public async fetchData(): Promise<void> {
@@ -29,8 +30,6 @@ export class UserService {
   }
 
   public getItem(id: number): void {
-    console.log(typeof id, 'id please') 
-    console.log(this.userItems.filter((item,index) => index === id))
     this.currentItem = this.userItems.filter((item,index) => index === id) 
   }
 
@@ -40,6 +39,7 @@ export class UserService {
       key: this.USER_STORAGE,
       value: JSON.stringify(this.users)
     })
+    this.storeUser(user)
   }
 
   public async findUser(userInfo: User):Promise<User | undefined>  {
@@ -47,9 +47,23 @@ export class UserService {
     const users = JSON.parse(usersData.value) 
     if(users.length > 0) {
       const user = users.filter((user:User) => user.email === userInfo.email && user.password === userInfo.password) 
-      return user.find((u:User) => u) 
+      return user.find((u:User) => {
+        this.storeUser(u)
+        return u
+      }) 
     }
     return undefined
+  }
+
+  private storeUser(user: User): void {
+    Storage.set({
+      key: this.CURRENT_USER_STORAGE,
+      value: JSON.stringify(user)
+    })
+  }
+
+  public removeCurrentUser() {
+    Storage.remove({key: this.CURRENT_USER_STORAGE})
   }
 
   public validateUser(): void {
