@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'user-profile',
-    loadChildren: () => import('./tab2/tab2.module').then(m => m.Tab2PageModule),
+    loadChildren: () => import('./user-profile/tab2.module').then(m => m.Tab2PageModule),
     canActivateChild: [AuthGuard]
   }
    
